@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Models;
+namespace Src\Models;
 
 use InvalidArgumentException;
 
@@ -57,3 +57,5 @@ class Money
     }
 
 }
+
+echo 111;

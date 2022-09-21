@@ -1,7 +1,7 @@
 <?php
 
-use src\Models\Currency;
-use src\Models\Money;
+use Src\Models\Currency;
+use Src\Models\Money;
 
 require_once 'autoloader.php';
 

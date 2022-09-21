@@ -119,5 +119,5 @@ class Psr4AutoloaderClass
 
 
 $object = new  Psr4AutoloaderClass();
-$object->addNamespace('src\\Models', 'src/Models');
+$object->addNamespace('Src\\Models', 'Src/Models');
 $object->register();
