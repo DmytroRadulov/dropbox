@@ -37,8 +37,7 @@ class Money
         return $this->currency;
     }
 
-
-    private function setCurrency($currency)
+    private function setCurrency(Currency $currency)
     {
         $this->currency = $currency;
     }
@@ -53,9 +52,9 @@ class Money
         if(!$this->getCurrency()->equals($money->getCurrency())) {
             throw new InvalidArgumentException('The currency is different');
         }
-        return $this->getAmount() + $money->getAmount();
+        return new self($this->getAmount() + $money->getAmount(), $this->getCurrency());
+
     }
 
 }
 
-echo 111;
