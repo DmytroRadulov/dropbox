@@ -1,0 +1,12 @@
+{
+  "autoload": {
+    "psr-4": {
+     "web\\" : "../public"
+    }
+  },
+  "require": {
+    "guzzlehttp/guzzle": "^7.0",
+    "illuminate/database": "^9.31",
+    "illuminate/events": "^9.31"
+  }
+}
