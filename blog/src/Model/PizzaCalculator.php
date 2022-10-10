@@ -15,7 +15,8 @@ class PizzaCalculator
 
     }
 
-    public function ingredients () {
+    public function ingredients()
+    {
         $ingredients = [];
         foreach ($this->pizza as $pizza) {
             $ingredients = array_merge($ingredients, $pizza->getIngredients());
@@ -23,7 +24,8 @@ class PizzaCalculator
         return $ingredients;
     }
 
-    public function price () {
+    public function price()
+    {
         $price = 0;
         foreach ($this->pizza as $pizza) {
             $price += $pizza->getCost();

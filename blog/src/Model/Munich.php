@@ -10,7 +10,8 @@ class Munich implements PizzaInterface
     {
         return 285;
     }
-    public function getIngredients() : array
+
+    public function getIngredients(): array
     {
         return [
             'sausages' => 'мюнхенські і баварські ковбаски',
@@ -24,7 +25,8 @@ class Munich implements PizzaInterface
             'pilatti-sauce' => 'соус пілатті'
         ];
     }
-    public function getTitle() :string
+
+    public function getTitle(): string
     {
         return 'Munich';
     }

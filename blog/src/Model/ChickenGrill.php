@@ -10,7 +10,8 @@ class  ChickenGrill implements PizzaInterface
     {
         return 194;
     }
-    public function getIngredients() : array
+
+    public function getIngredients(): array
     {
         return [
             'cheese_sauce' => 'сирний соус',
@@ -22,7 +23,8 @@ class  ChickenGrill implements PizzaInterface
             'parmesan' => 'Пармезан'
         ];
     }
-    public function getTitle() :string
+
+    public function getTitle(): string
     {
         return 'Chicken Grill';
     }

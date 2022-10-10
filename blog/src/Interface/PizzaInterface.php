@@ -8,8 +8,8 @@ interface PizzaInterface
     public function getCost(): float;
 
 
-    public function getIngredients() : array;
+    public function getIngredients(): array;
 
 
-    public function getTitle() :string;
+    public function getTitle(): string;
 }

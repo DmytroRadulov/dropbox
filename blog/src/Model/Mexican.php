@@ -10,7 +10,8 @@ class Mexican implements PizzaInterface
     {
         return 175;
     }
-    public function getIngredients() : array
+
+    public function getIngredients(): array
     {
         return [
             'cream_cheese_sauce' => 'вершково-сирний соус',
@@ -23,7 +24,8 @@ class Mexican implements PizzaInterface
             'cilantro' => 'кінза',
         ];
     }
-    public function getTitle() :string
+
+    public function getTitle(): string
     {
         return 'Mexican';
     }
