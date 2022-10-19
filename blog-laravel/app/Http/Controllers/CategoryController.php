@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 
-class HomeController
+class CategoryController
 {
-    public function autcategory($id, $category_id)
+    public function category($id)
     {
-        $posts = $this->getPosts(['user_id' => $id, 'category_id' => $category_id]);
-        return view('catuser/index', compact('posts'));
+        $posts = $this->getPosts(['category_id' => $id]);
+        return view('category/index', compact('posts'));
     }
 
     private function getPosts($params = [])
@@ -22,5 +22,3 @@ class HomeController
     }
 
 }
-
-

@@ -12,6 +12,7 @@
             <th>Updated_at</th>
         </tr>
         @foreach($posts as $post)
+
             <tr>
                 <td>{{$post->user->name}}</td>
                 <td>{{$post->category->title}}</td>
