@@ -23,5 +23,13 @@
             </tr>
         @endforeach
     </table>
+    <ul>
+        <li>
+            <a href="{{ $posts->nextPageUrl() }}">Next page</a>
+        </li>
+        <li>
+            <a href="{{ $posts->previousPageUrl() }}">Prev page</a>
+        </li>
+    </ul>
 @endsection
 
