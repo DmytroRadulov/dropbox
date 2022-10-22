@@ -18,6 +18,11 @@ return new class extends Migration {
             $table->string('slug');
             $table->timestamps();
         });
+        Schema::create('post_tag', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('post_id')->index()->constrained('posts', 'id')->cascadeOnDelete();
+            $table->foreignId('tag_id')->index()->constrained('tags', 'id')->cascadeOnDelete();
+        });
     }
 
     /**
@@ -27,6 +32,7 @@ return new class extends Migration {
      */
     public function down()
     {
+        Schema::dropIfExists('post_tag');
         Schema::dropIfExists('tags');
     }
 };
