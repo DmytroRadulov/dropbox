@@ -9,6 +9,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Category extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'title',
+        'slug'
+    ];
 
     public $timestamps = true;
 

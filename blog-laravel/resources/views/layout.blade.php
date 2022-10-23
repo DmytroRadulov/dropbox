@@ -12,6 +12,7 @@
     <div class="row">
         <div class="col">
             @yield('content')
+            @yield('form')
         </div>
     </div>
 </div>
