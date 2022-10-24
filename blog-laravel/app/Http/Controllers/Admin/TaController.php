@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Tag;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 
-class AdminTagController
+class TaController
 {
     public function index()
     {

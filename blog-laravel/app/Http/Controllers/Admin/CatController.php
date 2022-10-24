@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Category;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 
-class AdminCategoryController
+class CatController
 {
     public function index()
     {

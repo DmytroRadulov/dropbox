@@ -13,7 +13,6 @@
             <label for="name" class="form-label">Title:</label>
             <input type="text" id="title" name="title"
                    value="{{$category->title && !$errors->has('title') ? $category->title : old('title')}}">
-
             @if($errors->has('title'))
                 @foreach($errors->get('title') as $error)
                     <div class="alert alert-danger" role="alert">

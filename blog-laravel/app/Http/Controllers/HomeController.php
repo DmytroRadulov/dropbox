@@ -6,6 +6,10 @@ use App\Models\Post;
 
 class HomeController
 {
+    public function index()
+    {
+        return view('welcome');
+    }
     public function autcategory($id, $category_id)
     {
         $posts = $this->getPosts(['user_id' => $id, 'category_id' => $category_id]);
@@ -20,7 +24,6 @@ class HomeController
         }
         return $posts->get();
     }
-
 }
 
 
