@@ -2,23 +2,52 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\Review;
 use App\Models\Tag;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 
-class PoController
+class PoController extends Controller
 {
     public function index()
     {
-        $posts = Post::paginate(6);
+        $posts = Post::with(['category', 'tags', 'user'])->paginate(5);
         return view('admin/post/index', compact('posts'));
     }
 
+    public function show($id)
+    {
+        $reviews = Review::all();
+        $post = Post::find($id);
+        return view('admin/post/show', compact('post', 'reviews'));
+
+    }
+
+    public function addReview(Request $request, $id)
+    {
+        $request->validate([
+            'description' => [
+                'required',
+                'min:10'
+            ],
+        ]);
+        $post = Post::find($id);
+        $review = new Review();
+        $review->name = $request->input('name');
+        $review->description = $request->input('description');
+        $post->reviews()->save($review);
+
+        return redirect()->route('admin.posts.show', ['id' => $post->id]);
+    }
+
+
     public function create()
     {
+        $this->authorize('create', Post::class);
         $post = new Post();
         $isCreate = true;
         $categories = Category::all();
@@ -30,6 +59,9 @@ class PoController
 
     public function store(Request $request)
     {
+        if (!$request->user()->can('store', Post::class)) {
+            abort(403);
+        }
         $request->validate([
             'title' => [
                 'required',
@@ -52,6 +84,7 @@ class PoController
     public function edit($id)
     {
         $post = Post::find($id);
+        $this->authorize('update', $post);
         $isCreate = false;
         $categories = Category::all();
         $tags = Tag::all();

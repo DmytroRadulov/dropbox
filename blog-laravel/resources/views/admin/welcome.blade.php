@@ -401,11 +401,15 @@
 </head>
 <body class="antialiased">
 <div
-    class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-    <h3>Welcome <br>
+    class="">
+    @can('access-dashboard')
+    <h3>
+            Welcome <br>
         Admin panel <br>
-        <a href="{{route('auth.logout')}}">Logout</a>
     </h3>
+    @endcan
+    <a href="{{route('auth.logout')}}">Logout</a>
 </div>
 </body>
 </html>
+

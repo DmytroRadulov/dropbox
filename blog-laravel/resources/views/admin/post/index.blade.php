@@ -2,7 +2,9 @@
 
 @section('content')
     <h1>Post</h1>
-    <a href="{{route('admin.posts.create')}}" class="btn btn-success">Add post</a>
+    @can('create',\App\Models\Post::class)
+        <a href="{{route('admin.posts.create')}}" class="btn btn-success">Add post</a>
+    @endcan
     <table class="table">
         <tr>
             <th>user name</th>
@@ -13,6 +15,7 @@
             <th>Updated_at</th>
             <th>Update</th>
             <th>Delete</th>
+            <th>More</th>
         </tr>
         @foreach($posts as $post)
             <tr>
@@ -22,10 +25,16 @@
                 <td>{{$post->body}}</td>
                 <td>{{$post->created_at }}</td>
                 <td>{{$post->updated_at }}</td>
-                <td><a href="/admin/post/{{$post->id}}/edit"
-                       class="btn btn-outline-primary">update</a></td>
+                <td>
+                    @can('update',$post)
+                        <a href="{{route('admin.posts.edit',['id'=>$post->id])}}"
+                           class="btn btn-outline-primary">update</a>
+                    @endcan
+                </td>
                 <td><a href="/admin/post/{{$post->id}}/delete"
                        class="btn btn-outline-danger">delete</a></td>
+                <td><a href="{{route('admin.posts.show',['id'=>$post->id])}}"
+                       class="btn btn-outline-primary">More...</a></td>
             </tr>
         @endforeach
     </table>

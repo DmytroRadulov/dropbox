@@ -10,7 +10,8 @@ class TaController
 {
     public function index()
     {
-        $tags = Tag::paginate(6);
+//        $tags = Tag::paginate(6);
+        $tags = Tag::with(['posts'])->paginate(5);
         return view('admin/tag/index', compact('tags'));
     }
 

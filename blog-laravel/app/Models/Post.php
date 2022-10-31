@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Post extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'title',
         'body',
@@ -29,6 +30,11 @@ class Post extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function reviews()
+    {
+        return $this->morphMany(Review::class, 'review');
     }
 
 }
