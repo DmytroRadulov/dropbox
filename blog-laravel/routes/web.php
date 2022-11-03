@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\CatController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\PanelController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\Oauth\GoogleController;
 
 
 /*
@@ -25,6 +26,9 @@ use App\Http\Controllers\PageController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/callback', GoogleController::class)->name('google.callback');
+
 Route::get('lara/', [HomeController::class, 'index'])->name('main');
 
 Route::get('/', [PostController::class, 'index'])->name('post');
@@ -34,17 +38,16 @@ Route::get('/author/{id}/category/{category_id}', [HomeController::class, 'autca
 Route::get('/tag/{id}', [TagController::class, 'tag'])->name('tag');
 Route::get('/author/{id}/category/{category_id}/tag/{tag_id}', [PostAllController::class, 'all'])->name('author.category.tag');
 
+
 Route::middleware(['guest'])->group(function () {
-    Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
     Route::post('/auth/login', [AuthController::class, 'handleLogin'])->name('auth.handleLogin');
 });
 
+Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
+Route::get('/admin', [PanelController::class, 'index'])->name('admin.panel');
 
 Route::middleware(['auth'])->group(function () {
-
-    Route::get('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
-
-    Route::get('/admin', [PanelController::class, 'index'])->name('admin.panel');
 
     Route::get('/admin/post', [PoController::class, 'index'])->name('admin.posts');
     Route::get('admin/post/create', [PoController::class, 'create'])->name('admin.posts.create');

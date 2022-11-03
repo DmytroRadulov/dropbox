@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Page;
 use App\Models\Post;
+use App\Models\Review;
 use App\Models\Tag;
 use App\Models\Category;
 use App\Models\User;
@@ -31,5 +32,6 @@ class DatabaseSeeder extends Seeder
         });
 
         $pages = Page::factory(20)->create();
+        $reviews = Review::factory(20)->create();
     }
 }

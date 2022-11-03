@@ -10,7 +10,6 @@ class CatController
 {
     public function index()
     {
-//        $categories = Category::paginate(6);
         $categories = Category::with(['posts'])->paginate(5);
         return view('admin/category/index', compact('categories'));
     }

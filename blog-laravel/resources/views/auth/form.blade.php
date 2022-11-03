@@ -26,5 +26,8 @@
             <input type="password" class="form-control" id="password" name="password">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+        <br>
+        <h1></h1>
+        <a href="{{ $uri }}">Google</a>
     </form>
 @endsection
