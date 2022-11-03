@@ -11,9 +11,9 @@ class AuthController
     public function login()
     {
         $parameters = [
-            'redirect_uri' => GOOGLE_REDIRECT_URI,
+            'redirect_uri' => getenv('GOOGLE_REDIRECT_URI'),
             'response_type' => 'code',
-            'client_id' => GOOGLE_CLIENT_ID,
+            'client_id' => getenv('GOOGLE_CLIENT_ID'),
             'scope' => implode(' ', GOOGLE_SCOPES),
         ];
         $uri = GOOGLE_AUTH_URI . '?' . http_build_query($parameters);

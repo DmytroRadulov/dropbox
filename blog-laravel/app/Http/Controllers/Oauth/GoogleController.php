@@ -12,9 +12,9 @@ class GoogleController
     public function __invoke()
     {
         $parameters = [
-            'client_id' => GOOGLE_CLIENT_ID,
-            'client_secret' => GOOGLE_CLIENT_SECRET,
-            'redirect_uri' => GOOGLE_REDIRECT_URI,
+            'client_id' => getenv('GOOGLE_CLIENT_ID'),
+            'client_secret' => getenv('GOOGLE_CLIENT_SECRET'),
+            'redirect_uri' => getenv('GOOGLE_REDIRECT_URI'),
             'grant_type' => 'authorization_code',
             'code' => $_GET['code'],
         ];
