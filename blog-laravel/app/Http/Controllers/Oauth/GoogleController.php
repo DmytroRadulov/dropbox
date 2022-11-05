@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+const GOOGLE_TOKEN_URI = 'https://accounts.google.com/o/oauth2/token';
+const GOOGLE_USER_INFO_URI = 'https://www.googleapis.com/oauth2/v1/userinfo';
 
 class GoogleController
 {

@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+const GOOGLE_SCOPES = [
+    'https://www.googleapis.com/auth/userinfo.email',
+    'https://www.googleapis.com/auth/userinfo.profile'
+];
+const GOOGLE_AUTH_URI = 'https://accounts.google.com/o/oauth2/auth';
+
 class AuthController
 {
     public function login()
