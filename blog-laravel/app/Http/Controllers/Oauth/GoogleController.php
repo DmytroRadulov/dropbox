@@ -6,25 +6,25 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-const GOOGLE_TOKEN_URI = 'https://accounts.google.com/o/oauth2/token';
-const GOOGLE_USER_INFO_URI = 'https://www.googleapis.com/oauth2/v1/userinfo';
-
 class GoogleController
 {
+     const GOOGLE_TOKEN_URI = 'https://accounts.google.com/o/oauth2/token';
+     const GOOGLE_USER_INFO_URI = 'https://www.googleapis.com/oauth2/v1/userinfo';
+
     public function __invoke()
     {
         $parameters = [
-            'client_id' => getenv('GOOGLE_CLIENT_ID'),
-            'client_secret' => getenv('GOOGLE_CLIENT_SECRET'),
-            'redirect_uri' => getenv('GOOGLE_REDIRECT_URI'),
+            'client_id' => config()->get('services.google.client_id'),
+            'client_secret' => config()->get('services.google.client_secret'),
+            'redirect_uri' => config()->get('services.google.redirect'),
             'grant_type' => 'authorization_code',
             'code' => $_GET['code'],
         ];
         $client = new \GuzzleHttp\Client();
-        $response = $client->post(GOOGLE_TOKEN_URI, ['form_params' => $parameters]);
+        $response = $client->post( self::GOOGLE_TOKEN_URI, ['form_params' => $parameters]);
         $user = json_decode($response->getBody()->getContents(), true);
         $token = $user['access_token'];
-        $response = $client->get(GOOGLE_USER_INFO_URI, [
+        $response = $client->get(self::GOOGLE_USER_INFO_URI, [
             'headers' => [
                 'Authorization' => 'Bearer ' . $token
             ]

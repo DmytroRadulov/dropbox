@@ -6,23 +6,23 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-const GOOGLE_SCOPES = [
-    'https://www.googleapis.com/auth/userinfo.email',
-    'https://www.googleapis.com/auth/userinfo.profile'
-];
-const GOOGLE_AUTH_URI = 'https://accounts.google.com/o/oauth2/auth';
-
 class AuthController
 {
+    const GOOGLE_SCOPES = [
+        'https://www.googleapis.com/auth/userinfo.email',
+        'https://www.googleapis.com/auth/userinfo.profile'
+    ];
+    const GOOGLE_AUTH_URI = 'https://accounts.google.com/o/oauth2/auth';
+
     public function login()
     {
         $parameters = [
-            'redirect_uri' => getenv('GOOGLE_REDIRECT_URI'),
+            'redirect_uri' => config()->get('services.google.redirect'),
             'response_type' => 'code',
-            'client_id' => getenv('GOOGLE_CLIENT_ID'),
-            'scope' => implode(' ', GOOGLE_SCOPES),
+            'client_id' => config()->get('services.google.client_id'),
+            'scope' => implode(' ', self::GOOGLE_SCOPES),
         ];
-        $uri = GOOGLE_AUTH_URI . '?' . http_build_query($parameters);
+        $uri = self::GOOGLE_AUTH_URI . '?' . http_build_query($parameters);
         return view("auth/form", compact('uri'));
     }
 
