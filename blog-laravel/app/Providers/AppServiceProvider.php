@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Services\UserAgent\ParserJenssegers;
+use App\Services\UserAgent\UserAgentInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(UserAgentInterface::class, function () {
+            return new ParserJenssegers();
+        });
     }
 
     /**

@@ -14,6 +14,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\PanelController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\Oauth\GoogleController;
+use App\Http\Controllers\Admin\AgentController;
 
 
 /*
@@ -26,6 +27,7 @@ use App\Http\Controllers\Oauth\GoogleController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('geo/', [AgentController::class, 'index'])->name('geo');
 
 Route::get('/callback', GoogleController::class)->name('google.callback');
 
