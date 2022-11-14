@@ -10,7 +10,7 @@ class Visit extends Model
     use HasFactory;
 
     protected $fillable = [
-        'Browser',
-        'Platform'
+        'browser',
+        'platform'
     ];
 }

@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('visits', function (Blueprint $table) {
             $table->id();
-            $table->string('Browser');
-            $table->string('Platform');
+            $table->string('browser');
+            $table->string('platform');
             $table->timestamps();
         });
     }

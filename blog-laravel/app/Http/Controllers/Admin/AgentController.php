@@ -20,8 +20,8 @@ class AgentController extends Controller
 
         if (!empty($browser) && !empty($platform)) {
             Visit::create([
-                'Browser' => $browser,
-                'Platform' => $platform,
+                'browser' => $browser,
+                'platform' => $platform,
             ]);
         }
     }
