@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Services\UserAgent\ParserJenssegers;
-use App\Services\UserAgent\UserAgentInterface;
+use Package\UserAgent\Test\ParserJenssegers;
+use Package\Interface\Test\UserAgentInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

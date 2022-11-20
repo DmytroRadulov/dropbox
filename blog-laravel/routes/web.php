@@ -27,11 +27,11 @@ use App\Http\Controllers\Admin\AgentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('geo/', [AgentController::class, 'index'])->name('geo');
+Route::get('/geo', [AgentController::class, 'index'])->name('geo');
 
 Route::get('/callback', GoogleController::class)->name('google.callback');
 
-Route::get('lara/', [HomeController::class, 'index'])->name('main');
+Route::get('/lara', [HomeController::class, 'index'])->name('main');
 
 Route::get('/', [PostController::class, 'index'])->name('post');
 Route::get('/author/{id}', [UserController::class, 'author'])->name('author');

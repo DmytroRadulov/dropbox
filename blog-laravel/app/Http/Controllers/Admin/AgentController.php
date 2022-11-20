@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Services\UserAgent\UserAgentInterface;
+use Package\Interface\Test\UserAgentInterface;
 use App\Models\Visit;
 
 class AgentController extends Controller
