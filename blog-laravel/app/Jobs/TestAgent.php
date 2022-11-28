@@ -4,7 +4,6 @@ namespace App\Jobs;
 
 use App\Models\Visit;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
@@ -34,11 +33,6 @@ class TestAgent implements ShouldQueue
      */
     public function handle()
     {
-        $ip = request()->ip();
-        if ($ip == '127.0.0.1') {
-            $ip = request()->server->get('HTTP_X_FORWARDED_FOR');
-        }
-
         $browser = $this->userAgent->getBrowser();
         $platform = $this->userAgent->getPlatform();
 
