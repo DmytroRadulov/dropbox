@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0c002fa99026aee59cbfb2438f70728",
+    "content-hash": "d3262e7ae00b08a49ae603104d831ccd",
     "packages": [
         {
             "name": "brick/math",
@@ -215,25 +215,24 @@
         },
         {
             "name": "dmytro-radulov/package-user-agent-test",
-            "version": "dev-master",
+            "version": "v1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/DmytroRadulov/package-userAgent-test.git",
-                "reference": "55b61199e86d8a46eacab3af05e08230c590918f"
+                "reference": "3c1cf75da55157754c4854a938af48a6878348f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DmytroRadulov/package-userAgent-test/zipball/55b61199e86d8a46eacab3af05e08230c590918f",
-                "reference": "55b61199e86d8a46eacab3af05e08230c590918f",
+                "url": "https://api.github.com/repos/DmytroRadulov/package-userAgent-test/zipball/3c1cf75da55157754c4854a938af48a6878348f3",
+                "reference": "3c1cf75da55157754c4854a938af48a6878348f3",
                 "shasum": ""
             },
             "require": {
-                "dmytro/package-interface-test": "dev-master",
+                "dmytro/package-interface-test": "^1.0",
                 "guzzlehttp/guzzle": "^7.5",
                 "jenssegers/agent": "^2.6",
                 "laravel/framework": "^9.19"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -251,14 +250,14 @@
             ],
             "description": "short",
             "support": {
-                "source": "https://github.com/DmytroRadulov/package-userAgent-test/tree/master",
+                "source": "https://github.com/DmytroRadulov/package-userAgent-test/tree/v1.0",
                 "issues": "https://github.com/DmytroRadulov/package-userAgent-test/issues"
             },
-            "time": "2022-11-19T18:36:22+00:00"
+            "time": "2022-11-28T15:03:29+00:00"
         },
         {
             "name": "dmytro/package-interface-test",
-            "version": "dev-master",
+            "version": "v1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/DmytroRadulov/package-interface-test.git",
@@ -273,7 +272,6 @@
             "require": {
                 "laravel/framework": "^9.19"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -293,7 +291,7 @@
             "description": "short",
             "support": {
                 "issues": "https://github.com/DmytroRadulov/package-interface-test/issues",
-                "source": "https://github.com/DmytroRadulov/package-interface-test/tree/master"
+                "source": "https://github.com/DmytroRadulov/package-interface-test/tree/v1.0"
             },
             "time": "2022-11-16T15:27:24+00:00"
         },
@@ -1248,16 +1246,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.40.1",
+            "version": "v9.41.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "9611fdaf2db5759b8299802d7185bcdbee0340bb"
+                "reference": "cc902ce61b4ca08ca7449664cfab2fa96a1d1e28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/9611fdaf2db5759b8299802d7185bcdbee0340bb",
-                "reference": "9611fdaf2db5759b8299802d7185bcdbee0340bb",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/cc902ce61b4ca08ca7449664cfab2fa96a1d1e28",
+                "reference": "cc902ce61b4ca08ca7449664cfab2fa96a1d1e28",
                 "shasum": ""
             },
             "require": {
@@ -1430,7 +1428,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-11-15T16:13:22+00:00"
+            "time": "2022-11-22T15:10:46+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -1884,16 +1882,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "3.10.3",
+            "version": "3.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "8013fb046c6a244b2b1b75cc95d732ed6bcdeb8a"
+                "reference": "a7790f3dd1b27af81d380e6b2afa77c16ab7e181"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/8013fb046c6a244b2b1b75cc95d732ed6bcdeb8a",
-                "reference": "8013fb046c6a244b2b1b75cc95d732ed6bcdeb8a",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a7790f3dd1b27af81d380e6b2afa77c16ab7e181",
+                "reference": "a7790f3dd1b27af81d380e6b2afa77c16ab7e181",
                 "shasum": ""
             },
             "require": {
@@ -1955,7 +1953,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/3.10.3"
+                "source": "https://github.com/thephpleague/flysystem/tree/3.10.4"
             },
             "funding": [
                 {
@@ -1971,7 +1969,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-14T10:42:43+00:00"
+            "time": "2022-11-26T19:48:01+00:00"
         },
         {
             "name": "league/mime-type-detection",
@@ -6442,16 +6440,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.16.2",
+            "version": "v1.16.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "7d1ed5f856ec8b9708712e3fc0708fcabe114659"
+                "reference": "0dbee8802e17911afbe29a8506316343829b056e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/7d1ed5f856ec8b9708712e3fc0708fcabe114659",
-                "reference": "7d1ed5f856ec8b9708712e3fc0708fcabe114659",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/0dbee8802e17911afbe29a8506316343829b056e",
+                "reference": "0dbee8802e17911afbe29a8506316343829b056e",
                 "shasum": ""
             },
             "require": {
@@ -6498,7 +6496,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2022-09-28T13:13:22+00:00"
+            "time": "2022-11-21T16:19:18+00:00"
         },
         {
             "name": "maximebf/debugbar",
@@ -8629,14 +8627,12 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "dmytro-radulov/package-user-agent-test": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

@@ -13,7 +13,7 @@
         "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.7",
         "mobiledetect/mobiledetectlib": "^2.8",
-        "dmytro-radulov/package-user-agent-test": "dev-master"
+        "dmytro-radulov/package-user-agent-test": "^1.0"
     },
     "repositories": [
         {
