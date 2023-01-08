@@ -5,6 +5,11 @@ namespace App\Providers;
 use Package\UserAgent\Test\ParserJenssegers;
 use Package\Interface\Test\UserAgentInterface;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Storage;
+use League\Flysystem\Filesystem;
+use Spatie\Dropbox\Client as DropboxClient;
+use Spatie\FlysystemDropbox\DropboxAdapter;
+use Illuminate\Filesystem\FilesystemAdapter;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +32,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+
+        Storage::extend('dropbox', function ($app, $config) {
+            $adapter = new DropboxAdapter(
+                new DropboxClient($config['token'])
+            );
+
+            return new FilesystemAdapter(
+                new Filesystem($adapter, $config),
+                $adapter,
+                $config
+            );
+        });
     }
 }

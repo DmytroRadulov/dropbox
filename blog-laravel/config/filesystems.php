@@ -44,6 +44,14 @@ return [
             'throw' => false,
         ],
 
+        'image' => [
+            'driver' => 'local',
+            'root' => storage_path('app/image'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -54,6 +62,17 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
+        ],
+
+        'dropbox' => [
+                'driver' => 'dropbox',
+                'root' => storage_path('app/dropbox'),
+                'url' => env('APP_URL').'/storage',
+                'visibility' => 'public',
+                'token'  => env('DROPBOX_TOKEN'),
+                'key' => env('DROPBOX_APP_KEY'),
+                'secret' => env('DROPBOX_APP_SECRET'),
+                'throw' => true
         ],
 
     ],
@@ -71,6 +90,8 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('images') => storage_path('app/images'),
+        public_path('dropbox') => storage_path('app/dropbox'),
     ],
 
 ];
